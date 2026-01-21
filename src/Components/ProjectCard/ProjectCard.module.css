@@ -112,14 +112,15 @@
     0 0 18px #007bff;
 }
 
-/* Responsive */
+/* ================= Mobile Responsive ================= */
 @media (max-width: 900px) {
   .projectCard {
     padding: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .projectImage {
-    height: 150px;
+    height: 140px;
   }
 
   .projectTitle {
@@ -128,5 +129,48 @@
 
   .projectDescription {
     font-size: 0.9rem;
+  }
+
+  .techBtn {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .linkBtn {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.85rem;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 500px) {
+  .projectCard {
+    padding: 0.8rem;
+  }
+
+  .projectImage {
+    height: 120px;
+  }
+
+  .projectTitle {
+    font-size: 1rem;
+  }
+
+  .projectDescription {
+    font-size: 0.85rem;
+  }
+
+  .techStack {
+    gap: 0.3rem;
+  }
+
+  .techBtn {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .linkBtn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
   }
 }

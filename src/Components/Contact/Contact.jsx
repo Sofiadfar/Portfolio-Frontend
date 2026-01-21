@@ -22,7 +22,7 @@ const Contact = () => {
     e.preventDefault();
     // Simulate API request (replace with your API call)
     try {
-      await fetch("http://localhost:5000/api/contact", {
+      await fetch("https://portfolio-backend-9nxe.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
