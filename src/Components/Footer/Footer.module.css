@@ -1,0 +1,165 @@
+.footer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 26, 51, 0.9),
+    rgba(0, 51, 102, 0.85)
+  );
+  backdrop-filter: blur(16px);
+  color: white;
+
+  padding: 3rem 2rem 1.5rem;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* 🔥 Animated Neon Border */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+
+  background: linear-gradient(120deg, red, #007bff, red, #007bff);
+  background-size: 300% 300%;
+  animation: borderFlow 6s linear infinite;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+
+  pointer-events: none;
+}
+
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* Brand */
+.brand h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, red, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand p {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Headings */
+.links h4,
+.social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.links h4::after,
+.social h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, red, #007bff);
+}
+
+/* Links */
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 0.7rem;
+}
+
+.links a {
+  color: white;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.links a:hover {
+  color: #007bff;
+  padding-left: 6px;
+  text-shadow: 0 0 10px #007bff;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialIcons a {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.socialIcons a:hover {
+  color: red;
+  transform: translateY(-6px) scale(1.15);
+  text-shadow: 0 0 18px red;
+}
+
+/* Bottom */
+.bottom {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+.bottom p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Neon Border Animation */
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .links h4::after,
+  .social h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+}

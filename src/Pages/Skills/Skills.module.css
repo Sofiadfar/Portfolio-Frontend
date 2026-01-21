@@ -1,0 +1,117 @@
+/* Container */
+.skillsContainer {
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #000000, #001a33, #003366);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+/* Section Title */
+.skillsTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, red, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Skills Grid */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+}
+
+/* Skill Card */
+.skillItem {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(14px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.skillItem:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 30px red,
+    0 0 40px #007bff;
+}
+
+/* Skill Header */
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.skillName {
+  color: white;
+  font-weight: 600;
+}
+
+.skillPercent {
+  color: #00aaff;
+  font-weight: 600;
+}
+
+/* Skill Bar Container */
+.skillBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+/* Skill Progress */
+.skillProgress {
+  height: 100%;
+  border-radius: 6px;
+  box-shadow:
+    0 0 8px #00aaff,
+    0 0 12px red;
+}
+
+/* Skill Description */
+.skillDesc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+}
+
+/* Tooltip alternative on hover (optional) */
+.skillItem::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: 110%;
+  transform: translateX(-50%);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.skillItem:hover::after {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+}

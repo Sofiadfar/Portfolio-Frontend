@@ -1,0 +1,213 @@
+/* Container */
+.aboutContainer {
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #000000, #001a33, #003366);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, red, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* About Text */
+.aboutText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 3rem;
+}
+
+/* Experience Section */
+.experienceSection {
+  margin-top: 2rem;
+}
+
+.experienceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Experience Card */
+.experienceItem {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(14px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.experienceItem:hover {
+  box-shadow:
+    0 0 30px red,
+    0 0 40px #007bff;
+}
+
+/* Left Content */
+.experienceLeft {
+  flex: 1;
+}
+
+.companyLogo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  box-shadow: 0 0 12px #007bff;
+}
+
+.companyName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.role {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #00aaff;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  color: red;
+  text-shadow: 0 0 12px red;
+}
+
+/* Experience Description */
+.experienceDesc {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease;
+  opacity: 0;
+  margin-left: 1rem;
+}
+
+.experienceItem.active .experienceDesc {
+  max-height: 500px; /* Enough for content */
+  opacity: 1;
+}
+
+/* Right Content */
+.experienceRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 120px;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #00aaff;
+  font-weight: 500;
+}
+
+/* Education Section */
+.educationSection {
+  margin-top: 3rem;
+}
+
+/* Education Card */
+.educationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(14px);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.educationItem:hover {
+  box-shadow:
+    0 0 30px red,
+    0 0 40px #007bff;
+}
+
+.educationLink {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 1rem;
+}
+
+.educationLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.educationLogo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 12px #007bff;
+}
+
+.instituteName {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.degree {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Right Content */
+.educationRight {
+  min-width: 100px;
+  text-align: right;
+}
+
+.educationRight .duration {
+  color: #00aaff;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .experienceItem,
+  .educationItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experienceRight,
+  .educationRight {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+}

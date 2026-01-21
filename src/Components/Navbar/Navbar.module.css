@@ -1,0 +1,149 @@
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 10, 16, 0.831)
+  );
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.highlight {
+  background: linear-gradient(90deg, red, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Desktop Nav */
+.navLinks {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.navLinks li a {
+  position: relative;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Underline hover effect */
+.navLinks li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, red, #007bff);
+  transition: width 0.4s ease;
+}
+
+.navLinks li a:hover::after,
+.navLinks li a.active::after {
+  width: 100%;
+}
+
+.navLinks li a:hover {
+  color: #007bff;
+  text-shadow: 0 0 8px #007bff;
+}
+
+/* Active link */
+.active {
+  color: red !important;
+  text-shadow: 0 0 14px red;
+}
+
+/* Mobile */
+.mobileMenu {
+  display: none;
+  position: relative;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menuBar {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+}
+
+/* Mobile Dropdown */
+.mobileNavLinks {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 220px;
+  padding: 1.5rem;
+  list-style: none;
+
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 26, 51, 0.95)
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(0, 123, 255, 0.4);
+  z-index: 999;
+}
+
+.mobileNavLinks li a {
+  display: block;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobileNavLinks li a:hover {
+  color: red;
+  text-shadow: 0 0 14px red;
+}
+
+.mobileNavLinks li a.active {
+  color: red;
+  text-shadow: 0 0 14px red;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+}
